@@ -11,4 +11,11 @@ defmodule Sandbox.Ecto.Post do
 
     timestamps()
   end
+
+  def changeset(struct, params) do
+    struct
+    |> cast(params, [:name, :author_id])
+    |> cast_assoc(:comments)
+    |> set_position(:comments)
+  end
 end

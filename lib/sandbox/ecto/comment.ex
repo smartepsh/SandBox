@@ -10,4 +10,9 @@ defmodule Sandbox.Ecto.Comment do
     belongs_to :author, Author
     timestamps()
   end
+
+  def changeset(struct, params) do
+    struct
+    |> cast(params, [:name, :pos, :post_id, :author_id])
+  end
 end
