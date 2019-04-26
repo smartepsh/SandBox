@@ -10,6 +10,8 @@ defmodule Sandbox.Repo.Migrations.CreateEctoTestTables do
     create table(:ecto_posts) do
       add :author_id, references(:ecto_authors)
       add :name, :string
+      add :children, :map
+      add :other_children, :map
       timestamps()
     end
 
